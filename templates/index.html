@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Price Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Retail E-Commerce Price Tracker</h1>
+        <form action="/logout" method="post">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+
+    
+
+   
+
+
+    <!-- <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div> -->
+    
+    <div class="categories">
+        <a href="#" onclick="fetchProducts('SmartPhones')" value="SmartPhones">Smartphones</a>
+        <a href="#" onclick="fetchProducts('Laptop')" value="Laptop">Laptop</a>
+        <a href="#" onclick="fetchProducts('Refrigerators')" value="Refrigerators">Refrigerators</a>
+        <a href="#" onclick="fetchProducts('Televisions')" value="Televisions">Televisions</a>
+    </div>
+
+    <div class="dropdown" style="display: none;">
+        <div class="form-group">
+            <label for="productSelect" style="font-weight: bold; color: white;">Select Product:</label>
+            <select class="form-control" id="productSelect">
+                <option value="0">-- Select Product --</option>
+            </select>
+        </div>
+    </div>
+    <div class="card" style="display: none;">
+        <div class="product-details" style="display: none;">
+            <table>
+                
+                <tr>
+                    <!-- <th>Product Description</th> -->
+                    <td id="productDescription">N/A</td>
+                </tr>
+                <tr>
+                    <!-- <th>Product Image</th> -->
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                            id="productImage" alt="Product Image" onclick="fetchPriceDetails(document.getElementById('productSelect').value)">
+                    </td>
+                </tr>
+                <tr>
+                    <!-- <th>Product Brand</th> -->
+                    <td id="productBrand">N/A</td>
+                </tr>
+            </table>
+        </div>
+        <button type="button" id="add_to_wishlist_button">Add to Watchlist</button>
+
+        <div class="price-details" style="display: none;">
+            <table id="priceTable">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Price</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="priceTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
